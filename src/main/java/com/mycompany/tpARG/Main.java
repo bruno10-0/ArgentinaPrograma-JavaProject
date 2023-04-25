@@ -27,6 +27,7 @@ public class Main {
                         String usuario = rsParticipantes.getString("usuario");
                         participantes.put(idUsuario, new Participante(idUsuario, usuario));
                     }   // Calcular puntos
+                    
                     String queryApuestas = "SELECT * FROM apuestas APUESTA INNER JOIN resultadosDePartidos RESULT ON APUESTA.id_partido = RESULT.id_partido";
                     stmtApuestas = connection.prepareStatement(queryApuestas);
                     rsApuestas = stmtApuestas.executeQuery();
